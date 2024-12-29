@@ -7,7 +7,7 @@ Package used to generate multi-panel inductivity plots (scatter, residual, conte
 1) Muram_Inductivity.py -- python routine, the backend 
 2) run_Muram_Inductivity.sh -- script that iteratively calls on the python routine and closes it after each iteration to prevent memory overload.
 
-   BEFORE RUNNING: 
+   BEFORE RUNNING:
 1) Make sure the correct MURaM slice are in ./data or change the path variable (located at the beginning of the main function, average_temporally())! Download correct slices (to make sure they are correct, in Muram_Inductivity.py check the iter0 parameter (also at the beginning of average_temporally(), should match the time step of the first MURaM slice) and the delta_iter parameter (same locations, determines cadence). The code currently runs through six time steps excluding the initial one (hence the number of subplots in each row), so for instance, if the initial one is 138200 and delta_iter=200, then the MURaM slices corresponding to time steps 138400, 138600, 138800, 139000, 139200, and 139400 should also be present. Take care to include all the z and tau heights at these time steps, or edit the input matrix at the end of Muram_Inductivity.py to match your input files
 2) mkdir ./figures (subdirectory to store figures)
 3) mkdir ./averagings_output/Sz_fits (subdirectory to store Poynting flux files)
